@@ -68,7 +68,6 @@ public class JavaDockerCodeSandbox implements CodeSandbox {
 
 
 //        1. 把用户的代码保存为文件
-
         String userDir = System.getProperty("user.dir");
         String globalCodePathName = userDir + File.separator + GLOBAL_CODE_DIR_NAME;
         // 判断全局代码目录是否存在，没有则新建
@@ -116,7 +115,6 @@ public class JavaDockerCodeSandbox implements CodeSandbox {
                 pullImageCmd
                         .exec(pullImageResultCallback)
                         .awaitCompletion();
-
             } catch (InterruptedException e) {
                 System.err.println("拉取镜像异常");
                 throw new RuntimeException(e);
@@ -195,12 +193,10 @@ public class JavaDockerCodeSandbox implements CodeSandbox {
 
                 @Override
                 public void close() throws IOException {
-
                 }
 
                 @Override
                 public void onStart(Closeable closeable) {
-
                 }
 
                 @Override
@@ -286,9 +282,9 @@ public class JavaDockerCodeSandbox implements CodeSandbox {
             System.out.println("容器 " + containerId + " 停止成功");
 
             // 删除容器
-            RemoveContainerCmd removeContainerCmd = dockerClient.removeContainerCmd(containerId);
-            removeContainerCmd.exec();
-            System.out.println("容器 " + containerId + " 删除成功");
+//            RemoveContainerCmd removeContainerCmd = dockerClient.removeContainerCmd(containerId);
+//            removeContainerCmd.exec();
+//            System.out.println("容器 " + containerId + " 删除成功");
         } catch (Exception e) {
             System.err.println("停止或删除容器 " + containerId + " 时发生错误: " + e.getMessage());
         }
