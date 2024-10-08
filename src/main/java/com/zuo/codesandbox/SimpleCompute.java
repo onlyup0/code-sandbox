@@ -6,6 +6,6 @@ public class SimpleCompute {
         int a = Integer.parseInt(args[0]);
         int b = Integer.parseInt(args[1]);
         System.out.println("结果:" + (a + b));
-        System.out.println("第一次修改");
+        System.out.println("别人第一次修改");
     }
 }
